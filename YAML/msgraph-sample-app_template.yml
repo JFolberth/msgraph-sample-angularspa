@@ -1,0 +1,24 @@
+parameters:
+- name: environmentObjects
+  type: object
+  default:
+  - environmentName: 'dev'
+    dependsOn: ''
+    regionAbrvs: ['eus']
+  - environmentName: 'tst'
+    dependsOn: ''
+    regionAbrvs: ['eus']
+- name: templateFile
+  type: string
+  default: 'main'
+- name: serviceName
+  type: string
+  default: 'e2enpm'
+- name: npm_cache
+  type: boolean
+  default: true
+
+stages:
+- template: stages/nodejs_build_stage.yml@templates
+  parameters:
+    serviceName: ${{ parameters.serviceName }}
