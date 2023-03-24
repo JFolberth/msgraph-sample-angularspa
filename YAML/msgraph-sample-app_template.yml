@@ -22,3 +22,4 @@ stages:
 - template: stages/nodejs_build_stage.yml@templates
   parameters:
     serviceName: ${{ parameters.serviceName }}
+    environmentObjects: ${{ parameters.environmentObjects }}
