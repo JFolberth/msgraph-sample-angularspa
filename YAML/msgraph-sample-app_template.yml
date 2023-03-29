@@ -23,3 +23,7 @@ stages:
   parameters:
     serviceName: ${{ parameters.serviceName }}
     environmentObjects: ${{ parameters.environmentObjects }}
+- template: stages/terraform_js_deploy_stage.yml@templates
+  parameters:
+    serviceName: ${{ parameters.serviceName }}
+    environmentObjects: ${{ parameters.environmentObjects }}
